@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Serpent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header id="hud">
+            <div class="hud-stat">
+                <div class="hud-label">SCORE</div>
+                <div class="hud-value" id="score">0</div>
+            </div>
+            <div id="game-title">DUNGEON SERPENT</div>
+            <div class="hud-stat">
+                <div class="hud-label">LEVEL</div>
+                <div class="hud-value" id="level">1</div>
+            </div>
+        </header>
+        <main id="arena">
+            <canvas id="canvas"></canvas>
+            <div id="overlay-start" class="overlay">
+                <div class="panel">
+                    <h1>DUNGEON<br>SERPENT</h1>
+                    <p class="flavor">An ancient serpent stirs in the deep&hellip;</p>
+                    <div class="key-list">
+                        <div class="key-row"><kbd>WASD</kbd> or <kbd>&larr; &uarr; &darr; &rarr;</kbd> to move</div>
+                        <div class="key-row"><kbd>P</kbd> or <kbd>Space</kbd> to pause</div>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-item"><span class="dot gold"></span>Gold Coin &mdash; 10 pts</div>
+                        <div class="legend-item"><span class="dot ruby"></span>Ruby Gem &mdash; 25 pts</div>
+                        <div class="legend-item"><span class="dot diamond"></span>Diamond &mdash; 50 pts</div>
+                    </div>
+                    <div class="best-row">HIGH SCORE: <span id="best-start">0</span></div>
+                    <button class="btn" id="btn-start">ENTER DUNGEON</button>
+                </div>
+            </div>
+            <div id="overlay-pause" class="overlay hidden">
+                <div class="panel">
+                    <h2>PAUSED</h2>
+                    <p class="flavor">The serpent lurks in shadow&hellip;</p>
+                    <button class="btn" id="btn-resume">CONTINUE</button>
+                </div>
+            </div>
+            <div id="overlay-dead" class="overlay hidden">
+                <div class="panel">
+                    <h2 class="red">YOU DIED</h2>
+                    <div class="result-line">SCORE <span id="final-score">0</span></div>
+                    <div class="result-line">BEST <span id="final-best">0</span></div>
+                    <div id="new-record" class="new-record hidden">&#10022; NEW RECORD &#10022;</div>
+                    <button class="btn" id="btn-restart">DESCEND AGAIN</button>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            Collect treasures &middot; Avoid walls &middot; Don&rsquo;t bite yourself
+        </footer>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
